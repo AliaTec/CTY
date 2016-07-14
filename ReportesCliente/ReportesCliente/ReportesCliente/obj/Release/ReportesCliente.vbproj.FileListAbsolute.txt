@@ -1,0 +1,103 @@
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.dll
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.pdb
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.xml
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ResolveAssemblyReference.cache
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Resources.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.vbproj.GenerateResource.Cache
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.dll.licenses
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.dll
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.xml
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.pdb
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\bin\ActiveReports3.dll
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.CartaFiniquito.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Percepciones2.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.NewActiveReport1.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.NewActiveReport3.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.EmpresaMensual.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensual.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensual.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ExentosGravadosMensual.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensualISN.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensualISN.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ISN.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensualISNMEX.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensualISNMEX.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ISNMEX.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.dll
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.pdb
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.xml
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\bin\ActiveReports3.dll
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ResolveAssemblyReference.cache
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.CentroCostosEmpleado.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.CartaFiniquito.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensualISNMEX.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensualISNMEX.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ISNMEX.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensualISN.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensualISN.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ISN.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.EmpresaMensual.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensual.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensual.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ExentosGravadosMensual.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Empresa.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.NewActiveReport1.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.NewActiveReport2.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.NewActiveReport3.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Percepciones2.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Resources.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Deducciones.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Percepciones.resources
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.vbproj.GenerateResource.Cache
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.dll.licenses
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.dll
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.xml
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.pdb
+C:\Users\AliatecAdmin\Documents\trabajo\MC\Reportes Cliente\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.EmpleadosporConcepto.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.CentroCostosEmpleado.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.EmpleadosporConcepto.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.EmpresaGravadosExentosPeriodo.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.GravadosExentosPeriodo.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesGravadosExentosPeriodo.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesGravadosExentosPeriodo.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Provisiones.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ProvisionesPorEmpresa.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesEmpleadosPorConcepto.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesProvisionesCentroCostos.resources
+D:\Desarrollo\McGraw-Hill\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ProvisionesCentroCostos.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.dll
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.pdb
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\bin\ReportesCliente.xml
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\bin\ActiveReports3.dll
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.CartaFiniquito.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.CentroCostosEmpleado.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesEmpleadosPorConcepto.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesProvisionesCentroCostos.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Provisiones.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ProvisionesCentroCostos.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ProvisionesPorEmpresa.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.EmpleadosporConcepto.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensualISNMEX.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensualISNMEX.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ISNMEX.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensualISN.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensualISN.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ISN.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.EmpresaMensual.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesMensual.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesMensual.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.ExentosGravadosMensual.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.EmpresaGravadosExentosPeriodo.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.NewActiveReport1.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.GravadosExentosPeriodo.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.NewActiveReport3.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Percepciones2.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.Resources.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.DeduccionesGravadosExentosPeriodo.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.PercepcionesGravadosExentosPeriodo.resources
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.vbproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.dll.licenses
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.dll
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.xml
+C:\Users\Daniel\Documents\GitHub\Zoetis\ReportesCliente\ReportesCliente\ReportesCliente\obj\Release\ReportesCliente.pdb
