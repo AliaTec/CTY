@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Aliatec-ITX-ZTS", "Aliatec-ITX-ZTS.vbproj", "{B8F22B3E-6613-451B-9111-2F78F6ACA4A2}"
+# Visual Basic Express 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Aliatec-ITX-CTY", "Aliatec-ITX-CTY.vbproj", "{B8F22B3E-6613-451B-9111-2F78F6ACA4A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

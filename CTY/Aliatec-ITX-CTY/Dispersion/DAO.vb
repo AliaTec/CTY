@@ -41,6 +41,22 @@ Public Class DAO
     Private Const ValesDespensaPension As String = "sp_Reporte_LayoutValesDespensaPensionadasZoetis '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
     Private Const LayoutAportacion As String = "sp_Reporte_LayoutAportaZoetis '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
 
+    Private Const SuraAportaciones As String = "SuraAportaciones '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const SuraBajas As String = "SuraBajas '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const SuraCajadeAhorro As String = "SuraCajadeAhorro '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const SuraPrestamos As String = "SuraPrestamos '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const SuraPrestamos1 As String = "SuraPrestamos1 '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const SuraRetiros As String = "SuraRetiros '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const SuraSueldo As String = "SuraSueldo '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const LayoutBanamexNomina As String = "Banamex_Layout_Nomina_RCT1 '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const LayoutHSBCNetNomina As String = "Layout_HSBCNet '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const LayoutHSBCNetNominaTEF As String = "Layout_HSBCNet_TEF '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const IXEFAportaciones As String = "sp_Reporte_LayoutFondoAhorroBanorteAPORTACIONES '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const IXEPRESSOL As String = "IXE_Prestamo_Solicitud '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const ValesDespensaCTY As String = "spq_ValesDespensa_SIValeCOTY '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const ValesRestauranteCTY As String = "spq_ValesRestaurante_SIValeCOTY '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+
+
 
     Private Const ConfirmationPEX As String = "sp_ConfirmationLog_PEX '@IdRazonSocial','@folioDesde','@folioHasta','@UID','@LID','@idAccion'"
     Private Const GlobalFilePEX As String = "sp_Reporting_Global_PEX '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@folioDesde','@folioHasta','@UID','@LID','@idAccion'"
@@ -150,6 +166,18 @@ Public Class DAO
                     resultado = Me.ExecuteQuery(comandstr, ds, ReportesProceso)
                     Return ds
 
+                Case "IXEFAportaciones"
+                    comandstr = IXEFAportaciones
+                    resultado = Me.ExecuteQuery(comandstr, ds, ReportesProceso)
+                    Return ds
+
+                Case "IXEPRESSOL"
+                    comandstr = IXEPRESSOL
+                    resultado = Me.ExecuteQuery(comandstr, ds, ReportesProceso)
+                    Return ds
+
+
+
             End Select
         Catch e As Exception
         End Try
@@ -164,7 +192,404 @@ Public Class DAO
         'Dim ruta As String
         Try
             Select Case opL
-             
+
+                Case "SuraAportaciones"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\SuraAportaciones" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteSuraAportaciones(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+                Case "SuraBajas"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\SuraBajas" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteSuraBajas(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+
+                Case "  "
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\SuraCajadeAhorro" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteSuraCajadeAhorro(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+                Case "SuraPrestamos"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\SuraPrestamos" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteSuraPrestamos(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+                Case "SuraPrestamos1"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\SuraPrestamos1" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteSuraPrestamos1(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+                Case "SuraRetiros"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\SuraRetiros" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteSuraRetiros(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+
+                Case "SuraSueldo"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\SuraSueldo" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteSuraSueldo(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+
+                Case "LayoutBanamexNomina"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\LayoutBanamexNomina" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteLayoutBanamexNomina(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+
+                Case "LayoutHSBCNetNomina"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\LayoutHSBCNetNomina" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteLayoutHSBCNetNomina(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+
+                Case "LayoutHSBCNetNominaTEF"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\LayoutHSBCNetNominaTEF" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteLayoutHSBCNetNominaTEF(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+
+
                 Case "LayoutPolizaContableSAP"
                     Dim results As ResultCollection
                     Dim objLayoutDispersion As Entities.LayoutDispersion
@@ -684,10 +1109,211 @@ Public Class DAO
                     Return sPathApp + sPathArchivosTemp + sFile
 
 
+                Case "ValesDespensaCTY"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\ValesDespensa" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteValesDespensaCTY(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+
+
+                Case "ValesRestauranteCTY"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\ValesRestaurante" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteValesRestauranteCTY(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
             End Select
         Catch e As Exception
         End Try
         Return ""
+    End Function
+    Public Function ReporteSuraAportaciones(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = SuraAportaciones
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+    Public Function ReporteSuraBajas(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = SuraBajas
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+    Public Function ReporteSuraCajadeAhorro(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = SuraCajadeAhorro
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+    Public Function ReporteSuraPrestamos(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = SuraPrestamos
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+    Public Function ReporteSuraPrestamos1(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = SuraPrestamos1
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+    Public Function ReporteSuraRetiros(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = SuraRetiros
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+    Public Function ReporteSuraSueldo(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = SuraSueldo
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+
+    Public Function ReporteLayoutBanamexNomina(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = LayoutBanamexNomina
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+    Public Function ReporteLayoutHSBCNetNomina(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = LayoutHSBCNetNomina
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+    Public Function ReporteLayoutHSBCNetNominaTEF(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = LayoutHSBCNetNominaTEF
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
     End Function
     Public Function ReportePolizaContableSAP(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
         Dim data As SqlDataReader = Nothing
@@ -852,6 +1478,32 @@ Public Class DAO
         Dim comandstr As String
         Try
             comandstr = LayoutCityBankRechazados
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+
+    Public Function ReporteValesDespensaCTY(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = ValesDespensaCTY
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+
+    Public Function ReporteValesRestauranteCTY(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = ValesRestauranteCTY
             resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
             Return data
         Catch e As Exception

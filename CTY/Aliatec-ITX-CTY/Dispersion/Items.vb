@@ -257,6 +257,118 @@ Public Class Items
         newRow.Item("Case") = 100044
         Me.Rows.Add(newRow)
 
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100060
+        'accion
+        newRow.Item("Accion") = 100060
+        'case del aspx
+        newRow.Item("Case") = 100060
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100061
+        'accion
+        newRow.Item("Accion") = 100061
+        'case del aspx
+        newRow.Item("Case") = 100061
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100062
+        'accion
+        newRow.Item("Accion") = 100062
+        'case del aspx
+        newRow.Item("Case") = 100062
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100063
+        'accion
+        newRow.Item("Accion") = 100063
+        'case del aspx
+        newRow.Item("Case") = 100063
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100064
+        'accion
+        newRow.Item("Accion") = 100064
+        'case del aspx
+        newRow.Item("Case") = 100064
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100065
+        'accion
+        newRow.Item("Accion") = 100065
+        'case del aspx
+        newRow.Item("Case") = 100065
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100066
+        'accion
+        newRow.Item("Accion") = 100066
+        'case del aspx
+        newRow.Item("Case") = 100066
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100067
+        'accion
+        newRow.Item("Accion") = 100067
+        'case del aspx
+        newRow.Item("Case") = 100067
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100068
+        'accion
+        newRow.Item("Accion") = 100068
+        'case del aspx
+        newRow.Item("Case") = 100068
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100069
+        'accion
+        newRow.Item("Accion") = 100069
+        'case del aspx
+        newRow.Item("Case") = 100069
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100070
+        'accion
+        newRow.Item("Accion") = 100070
+        'case del aspx
+        newRow.Item("Case") = 100070
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100071
+        'accion
+        newRow.Item("Accion") = 100071
+        'case del aspx
+        newRow.Item("Case") = 100071
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100072
+        'accion
+        newRow.Item("Accion") = 100072
+        'case del aspx
+        newRow.Item("Case") = 100072
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100073
+        'accion
+        newRow.Item("Accion") = 100073
+        'case del aspx
+        newRow.Item("Case") = 100073
+        Me.Rows.Add(newRow)
+
 
 
     End Sub
