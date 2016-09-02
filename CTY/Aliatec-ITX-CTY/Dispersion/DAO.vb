@@ -575,7 +575,7 @@ Public Class DAO
                     dTotalImporte = 0
                     If results.Count > 0 Then
                         Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
-                        Dim sw As New StreamWriter(sb)
+                        Dim sw As New StreamWriter(sb, System.Text.Encoding.ASCII)
 
                         For i = 0 To results.Count - 1
                             sCadena = results(i).centroCosto

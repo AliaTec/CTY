@@ -242,22 +242,6 @@ Public Class Items
         Me.Rows.Add(newRow)
 
         newRow = Me.NewRow()
-        newRow.Item("Label") = 100043
-        'accion
-        newRow.Item("Accion") = 100043
-        'case del aspx
-        newRow.Item("Case") = 100043
-        Me.Rows.Add(newRow)
-
-        newRow = Me.NewRow()
-        newRow.Item("Label") = 100044
-        'accion
-        newRow.Item("Accion") = 100044
-        'case del aspx
-        newRow.Item("Case") = 100044
-        Me.Rows.Add(newRow)
-
-        newRow = Me.NewRow()
         newRow.Item("Label") = 100060
         'accion
         newRow.Item("Accion") = 100060
@@ -367,6 +351,30 @@ Public Class Items
         newRow.Item("Accion") = 100073
         'case del aspx
         newRow.Item("Case") = 100073
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100074
+        'accion
+        newRow.Item("Accion") = 100074
+        'case del aspx
+        newRow.Item("Case") = 100074
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100075
+        'accion
+        newRow.Item("Accion") = 100075
+        'case del aspx
+        newRow.Item("Case") = 100075
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100076
+        'accion
+        newRow.Item("Accion") = 100076
+        'case del aspx
+        newRow.Item("Case") = 100076
         Me.Rows.Add(newRow)
 
 
