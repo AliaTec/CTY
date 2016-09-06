@@ -55,6 +55,8 @@ Public Class DAO
     Private Const IXEPRESSOL As String = "IXE_Prestamo_Solicitud '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
     Private Const ValesDespensaCTY As String = "spq_ValesDespensa_SIValeCOTY '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
     Private Const ValesRestauranteCTY As String = "spq_ValesRestaurante_SIValeCOTY '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const PolizaCTY As String = "spq_Poliza_COTY '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const PolizaHFC As String = "spq_Poliza_HFC '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
 
 
 
@@ -176,6 +178,11 @@ Public Class DAO
                     resultado = Me.ExecuteQuery(comandstr, ds, ReportesProceso)
                     Return ds
 
+                Case "PolizaCTY"
+                    comandstr = PolizaCTY
+                    resultado = Me.ExecuteQuery(comandstr, ds, ReportesProceso)
+                    Return ds
+
 
 
             End Select
@@ -272,7 +279,7 @@ Public Class DAO
                     Return sPathApp + sPathArchivosTemp + sFile
 
 
-                Case "  "
+                Case "SuraCajadeAhorro"
                     Dim results As ResultCollection
                     Dim objLayoutDispersion As Entities.LayoutDispersion
                     Dim dTotalImporte As Decimal
@@ -492,6 +499,45 @@ Public Class DAO
                     sFile = "\LayoutBanamexNomina" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
 
                     results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReporteLayoutBanamexNomina(ReportesProceso))
+                    dTotalImporte = 0
+                    If results.Count > 0 Then
+                        Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
+                        Dim sw As New StreamWriter(sb)
+
+                        For i = 0 To results.Count - 1
+                            sCadena = results(i).centroCosto
+                            sw.WriteLine(sCadena)
+                        Next i
+
+                        sw.Close()
+
+                    End If
+
+                    Return sPathApp + sPathArchivosTemp + sFile
+
+                Case "PolizaHFC"
+                    Dim results As ResultCollection
+                    Dim objLayoutDispersion As Entities.LayoutDispersion
+                    Dim dTotalImporte As Decimal
+                    Dim sCadena As String
+                    Dim i As Integer
+                    results = New ResultCollection
+                    ReportesProceso.tipoArchivo = 0
+                    objLayoutDispersion = New Entities.LayoutDispersion
+                    objLayoutDispersion.IdRazonSocial = context.Session("IdRazonSocial")
+                    objLayoutDispersion.UID = context.Session("UID")
+                    objLayoutDispersion.LID = context.Session("LID")
+                    objLayoutDispersion.idAccion = context.Items.Item("idAccion")
+                    Dim UserId As String
+                    UserId = ReportesProceso.UID.ToString
+                    UserId = UserId.Replace("/", "")
+                    UserId = UserId.Replace("\", "")
+                    UserId = UserId.Replace("%", "")
+                    UserId = UserId.Replace("_", "")
+                    UserId = UserId.Replace("-", "")
+                    sFile = "\PolizaHFC" + ReportesProceso.IdRazonSocial.ToString + UserId + Date.Now.Second.ToString + ".txt"
+
+                    results.getEntitiesFromDataReader(objLayoutDispersion, Me.ReportePolizaHFC(ReportesProceso))
                     dTotalImporte = 0
                     If results.Count > 0 Then
                         Dim sb As New FileStream(context.Server.MapPath(sPathApp + sPathArchivosTemp) + sFile, FileMode.Create)
@@ -1291,6 +1337,19 @@ Public Class DAO
         End Try
         Return data
     End Function
+    Public Function ReportePolizaHFC(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
+        Dim data As SqlDataReader = Nothing
+        Dim resultado As Boolean
+        Dim comandstr As String
+        Try
+            comandstr = PolizaHFC
+            resultado = Me.ExecuteQuery(comandstr, data, ReportesProceso)
+            Return data
+        Catch e As Exception
+        End Try
+        Return data
+    End Function
+
     Public Function ReporteLayoutHSBCNetNomina(ByVal ReportesProceso As EntitiesITX.ReportesProceso) As SqlDataReader
         Dim data As SqlDataReader = Nothing
         Dim resultado As Boolean

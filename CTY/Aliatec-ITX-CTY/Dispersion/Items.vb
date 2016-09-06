@@ -377,6 +377,21 @@ Public Class Items
         newRow.Item("Case") = 100076
         Me.Rows.Add(newRow)
 
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100077
+        'accion
+        newRow.Item("Accion") = 100077
+        'case del aspx
+        newRow.Item("Case") = 100077
+        Me.Rows.Add(newRow)
+
+        newRow = Me.NewRow()
+        newRow.Item("Label") = 100078
+        'accion
+        newRow.Item("Accion") = 100078
+        'case del aspx
+        newRow.Item("Case") = 100078
+        Me.Rows.Add(newRow)
 
 
     End Sub
