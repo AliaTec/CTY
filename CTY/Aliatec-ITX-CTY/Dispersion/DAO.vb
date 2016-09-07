@@ -57,6 +57,7 @@ Public Class DAO
     Private Const ValesRestauranteCTY As String = "spq_ValesRestaurante_SIValeCOTY '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
     Private Const PolizaCTY As String = "spq_Poliza_COTY '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
     Private Const PolizaHFC As String = "spq_Poliza_HFC '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
+    Private Const IXEAltas As String = "spq_IXEFA_Altas '@IdRazonSocial','@IdTipoNominaAsig','@IdTipoNominaProc','@Anio','@Periodo','@UID','@LID','@idAccion'"
 
 
 
@@ -183,7 +184,10 @@ Public Class DAO
                     resultado = Me.ExecuteQuery(comandstr, ds, ReportesProceso)
                     Return ds
 
-
+                Case "IXEAltas"
+                    comandstr = IXEAltas
+                    resultado = Me.ExecuteQuery(comandstr, ds, ReportesProceso)
+                    Return ds
 
             End Select
         Catch e As Exception
